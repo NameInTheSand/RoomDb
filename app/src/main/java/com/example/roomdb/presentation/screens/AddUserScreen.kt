@@ -14,13 +14,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomdb.data.entities.User
 import com.example.roomdb.presentation.LocalNavController
 import com.example.roomdb.presentation.viewModels.MainActivityViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun AddUserScreen(viewModel: MainActivityViewModel = viewModel()) {
+fun AddUserScreen(viewModel: MainActivityViewModel = koinViewModel()) {
     Column(
         horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()

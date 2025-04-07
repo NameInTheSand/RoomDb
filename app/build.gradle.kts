@@ -1,5 +1,3 @@
-import org.gradle.kotlin.dsl.implementation
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -69,4 +67,6 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation (libs.androidx.navigation.compose)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 }

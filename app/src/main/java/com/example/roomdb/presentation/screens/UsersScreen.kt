@@ -5,12 +5,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.roomdb.presentation.viewModels.MainActivityViewModel
 import com.example.roomdb.presentation.listItems.UserListItem
+import com.example.roomdb.presentation.viewModels.MainActivityViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun UsersScreen(viewModel: MainActivityViewModel = viewModel()) {
+fun UsersScreen(viewModel: MainActivityViewModel = koinViewModel()) {
     val users = viewModel.users.collectAsState()
     LazyColumn {
         items(users.value) { user ->
