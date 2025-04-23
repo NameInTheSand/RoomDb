@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.example.roomdb.data.entities.User
 
 @Composable
-fun UserListItem(user: User){
+fun UserListItem(user: User, isTimeStampVisible: Boolean) {
     Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             text = "Name: " + user.name
@@ -22,7 +22,10 @@ fun UserListItem(user: User){
             text = "Age : ${user.age}"
         )
         Spacer(modifier = Modifier.height(5.dp))
-        Text("Date added: ${user.dateAdded}")
-        Spacer(modifier = Modifier.height(5.dp))
+        
+        if (isTimeStampVisible) {
+            Text("Date added: ${user.dateAdded}")
+            Spacer(modifier = Modifier.height(5.dp))
+        }
     }
 }

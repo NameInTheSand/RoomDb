@@ -2,20 +2,14 @@ package com.example.roomdb.presentation.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.roomdb.data.entities.User
 import com.example.roomdb.domain.repositories.SettingsRepository
-import com.example.roomdb.domain.useCases.user.GetUsersUseCase
-import com.example.roomdb.domain.useCases.user.SaveUserUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class MainActivityViewModel(
-    private val saveUserUseCase: SaveUserUseCase,
-    getUsersUseCase: GetUsersUseCase,
-    settingsRepository: SettingsRepository
+class SettingViewModel(
+    private val settingsRepository: SettingsRepository
 ) : ViewModel() {
 
     val isTimeStampVisibleFlow = settingsRepository.getTimeStampPreference().stateIn(
@@ -25,15 +19,9 @@ class MainActivityViewModel(
     )
 
 
-    val users: StateFlow<List<User>> = getUsersUseCase.getUsers().stateIn(
-        viewModelScope,
-        SharingStarted.Companion.Lazily,
-        emptyList()
-    )
-
-    fun addUser(user: User) {
+    fun editTimeStampPref(isVisible: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
-            saveUserUseCase.saveUser(user)
+            settingsRepository.saveTimeStampPreference(isVisible)
         }
     }
 }

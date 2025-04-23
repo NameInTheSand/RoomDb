@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RoomDb</string>
+    <string name="room_db_test">Room Db Test</string>
 </resources>
