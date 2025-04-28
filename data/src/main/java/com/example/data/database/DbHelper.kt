@@ -1,0 +1,21 @@
+package com.example.data.database
+
+import android.content.Context
+import androidx.room.Room
+import com.example.data.dao.UsersDao
+
+private const val dbName = "database-name"
+
+class DatabaseHelper(context: Context) {
+
+    private val database: AppDatabase = Room.databaseBuilder(
+        context,
+        AppDatabase::class.java,
+        "notes_db"
+    ).addMigrations(MIGRATION_1_2)
+        .build()
+
+    fun getUsersDao(): UsersDao {
+        return database.usersDao()
+    }
+}
