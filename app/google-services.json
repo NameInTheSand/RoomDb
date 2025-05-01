@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "770925338893",
+    "project_id": "roomitstepdb",
+    "storage_bucket": "roomitstepdb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770925338893:android:a7f1f3c43a6600df1b5044",
+        "android_client_info": {
+          "package_name": "com.example.roomdb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvPIwHeewvzrnQj8hrDNsYBHQ3_QfO0Yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

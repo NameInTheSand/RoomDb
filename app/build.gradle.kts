@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -41,4 +42,5 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":data"))
     implementation(libs.koin.android)
+    implementation(libs.firebase.messaging)
 }
